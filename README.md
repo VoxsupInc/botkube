@@ -1,3 +1,14 @@
+# 4C-Botkube
+This fork includes our custom filters for botkube
+
+## Building Our Container Image
+```
+// login to our aws ecr using docker login
+~ make container-image
+~ docker tag infracloudio/botkube:latest <our ecr repo>:botkube
+~ docker push <our ecr repo>:botkube
+```
+
 # BotKube
 [![CI](https://github.com/infracloudio/botkube/workflows/CI/badge.svg?branch=develop)](https://github.com/infracloudio/botkube/actions?query=workflow%3ACI+branch%3Adevelop) [![Go Report Card](https://goreportcard.com/badge/github.com/infracloudio/botkube)](https://goreportcard.com/report/github.com/infracloudio/botkube) [![BotKube website](https://img.shields.io/badge/docs-botkube.io-blue.svg)](https://botkube.io) [![GoDoc](https://godoc.org/github.com/infracloudio/botkube?status.svg)](https://godoc.org/github.com/infracloudio/botkube) [![Release Version](https://img.shields.io/github/v/release/infracloudio/botkube?label=Botkube)](https://github.com/infracloudio/botkube/releases/latest)
 

@@ -20,9 +20,6 @@
 # Development image
 FROM golang:1.13-alpine3.10 AS BUILD-ENV
 
-ARG GOOS_VAL 
-ARG GOARCH_VAL
-
 # Add git
 RUN apk update && apk add git curl
 
@@ -36,7 +33,7 @@ RUN go mod download
 COPY . .
 
 # Build binary
-RUN GOOS=${GOOS_VAL} GOARCH=${GOARCH_VAL} go build -o /go/bin/botkube ./cmd/botkube 
+RUN go build -o /go/bin/botkube ./cmd/botkube 
 
 # Install kubectl binary
 RUN apk add --no-cache ca-certificates git \
